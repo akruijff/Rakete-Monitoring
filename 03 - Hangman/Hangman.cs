@@ -21,13 +21,13 @@ namespace _03___Hangman
 
         public void Guess(string letters)
         {
-            letters = letters.ToLower();
             foreach (char c in letters)
                 Guess(c);
         }
 
         public void Guess(char letter)
         {
+            letter = char.ToLower(letter);
             if (lives == 0)
                 throw new InvalidOperationException("game over");
             if (!char.IsLetter(letter))
