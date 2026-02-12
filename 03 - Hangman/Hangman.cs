@@ -31,7 +31,9 @@ namespace _03___Hangman
         {
             StringBuilder builder = new StringBuilder(secretWord.Length * 2);
             foreach (char c in secretWord)
-                builder.Append("_ ");
+                builder
+                    .Append(guessedLetters.Contains(c) ? c : '_')
+                    .Append(" ");
             return builder.ToString().TrimEnd();
         }
     }
