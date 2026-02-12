@@ -44,17 +44,18 @@
             Console.WriteLine("Welcome to Hangman!");
             Console.WriteLine();
             Console.WriteLine(game.Status());
-            Console.WriteLine();
         }
 
         private static void GuessLetter(Hangman game)
         {
+            Console.WriteLine();
             Console.WriteLine("Guess a letter: ");
             game.Guess(Console.ReadKey().KeyChar.ToString().ToLower());
         }
 
         private static void DisplayResult(Hangman game)
         {
+            Console.WriteLine();
             if (game.IsGameWon())
                 Console.WriteLine("YOU WIN!");
             else
@@ -63,6 +64,7 @@
 
         private static bool ContinueGame()
         {
+            Console.WriteLine();
             Console.WriteLine("Play again? (y/n) ");
             return "y" == Console.ReadKey().KeyChar.ToString().ToLower();
         }
