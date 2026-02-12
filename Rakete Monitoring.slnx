@@ -2,4 +2,6 @@
   <Project Path="00 - TileCost Calculator/00 - TileCost Calculator.csproj" Id="4776ae54-a118-4514-8c59-b572d1065410" />
   <Project Path="01 - High-Low Number Guessing/01 - High-Low Number Guessing.csproj" Id="2189b155-c829-46d7-ab19-0e5db83e6db7" />
   <Project Path="02 - Reverse String/02 - Reverse String.csproj" Id="14b24edc-e05a-4097-bc03-83baddae47f1" />
+  <Project Path="03 - Hangman Tests/03 - Hangman Tests.csproj" Id="2e75eef7-c90b-4f25-b111-440e9acd1f43" />
+  <Project Path="03 - Hangman/03 - Hangman.csproj" Id="c9dbac97-3f92-4c4d-8cc7-088bae52edc0" />
 </Solution>
