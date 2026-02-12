@@ -1,4 +1,5 @@
 ﻿using _03___Hangman;
+using System.Net.NetworkInformation;
 
 namespace tests
 {
@@ -18,6 +19,16 @@ namespace tests
             game.Guess("abn");
             Assert.True(game.IsGameOver());
             Assert.True(game.IsGameWon());
+        }
+
+        [Fact]
+        public void An_empty_guess_doesnt_change_the_state_of_a_game()
+        {
+            Hangman game = new Hangman("banana", 1);
+            game.Guess("");
+            Assert.False(game.IsGameOver());
+            Assert.False(game.IsGameWon());
+            Assert.Equal("_ _ _ _ _ _", game.Status());
         }
 
         [Fact]
