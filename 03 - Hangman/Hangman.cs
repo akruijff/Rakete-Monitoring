@@ -27,7 +27,7 @@ namespace _03___Hangman
             return lives <= 0 || IsGameWon();
         }
 
-        private bool IsGameWon()
+        internal bool IsGameWon()
         {
             foreach (char c in secretWord)
                 if (!guessedLetters.Contains(c))
