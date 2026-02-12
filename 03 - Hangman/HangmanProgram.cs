@@ -2,9 +2,22 @@
 {
     internal class HangmanProgram
     {
+        const int LIVES = 5;
+        static List<string> words =
+        [
+            "banana",
+            "apple",
+            "grapefruit",
+            "strawberry",
+            "watermelon"
+        ];
+        static Random random = new Random();
+
         static void Main(string[] args)
         {
-            var game = new Hangman("banana", 5);
+            var word = words[random.Next(words.Count)];
+            var game = new Hangman(word, LIVES);
+
             while (!game.IsGameOver())
             {
                 Console.Clear();
