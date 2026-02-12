@@ -14,7 +14,7 @@ namespace _03___Hangman
             this.lives = lives;
         }
 
-        internal void Guess(char letter)
+        internal void Guess(string letter)
         {
             if (secretWord.Contains(letter))
                 guessedLetters += letter;
