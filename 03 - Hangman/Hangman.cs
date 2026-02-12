@@ -30,6 +30,8 @@ namespace _03___Hangman
         {
             if (lives == 0)
                 throw new InvalidOperationException("game over");
+            if (!char.IsLetter(letter))
+                return;
             if (secretWord.Contains(letter))
                 guessedLetters += letter;
             else if (!wrongLetters.Contains(letter))

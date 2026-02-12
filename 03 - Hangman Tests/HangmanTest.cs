@@ -73,6 +73,16 @@ namespace tests
             Assert.Equal("_ @ _ @ _ @", game.Status());
         }
 
+        [Fact]
+        public void Guessing_a_special_character_isnt_penalized()
+        {
+            Hangman game = new Hangman("b@n@n@", 1);
+            game.Guess("@");
+            Assert.False(game.IsGameOver());
+            Assert.False(game.IsGameWon());
+            Assert.Equal("_ @ _ @ _ @", game.Status());
+        }
+
         [Theory]
         [InlineData("a", "_ a _ a _ a")]
         [InlineData("aa", "_ a _ a _ a")]
