@@ -22,6 +22,11 @@ namespace _03___Hangman
                 --lives;
         }
 
+        internal bool IsGameOver()
+        {
+            return lives <= 0;
+        }
+
         internal String Status()
         {
             StringBuilder builder = new StringBuilder(secretWord.Length * 2);

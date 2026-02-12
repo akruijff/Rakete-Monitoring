@@ -4,14 +4,18 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Hangman!");
-            Console.WriteLine();
-
             var game = new Hangman("banana", 5);
-            Console.WriteLine(game.Status());
-            Console.WriteLine();
-            Console.WriteLine("Guess a letter: ");
-            game.Guess(Console.ReadKey().KeyChar);
+            while (!game.IsGameOver())
+            {
+                Console.Clear();
+                Console.WriteLine("Welcome to Hangman!");
+                Console.WriteLine();
+
+                Console.WriteLine(game.Status());
+                Console.WriteLine();
+                Console.WriteLine("Guess a letter: ");
+                game.Guess(Console.ReadKey().KeyChar);
+            }
         }
     }
 }
