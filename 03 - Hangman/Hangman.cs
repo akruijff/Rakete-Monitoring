@@ -24,6 +24,8 @@ namespace _03___Hangman
 
         private void Guess(char letter)
         {
+            if (lives == 0)
+                throw new InvalidOperationException("game over");
             if (secretWord.Contains(letter))
                 guessedLetters += letter;
             else if (!wrongLetters.Contains(letter))

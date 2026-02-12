@@ -41,6 +41,14 @@ namespace tests
         }
 
         [Fact]
+        public void A_game_in_over_state_doesnt_accept_guesses()
+        {
+            Hangman game = new Hangman("banana", 3);
+            game.Guess("xyz");
+            Assert.Throws<InvalidOperationException>(() => game.Guess("a"));
+        }
+
+        [Fact]
         public void A_duplicate_guess_isnt_penalized()
         {
             Hangman game = new Hangman("banana", 2);
