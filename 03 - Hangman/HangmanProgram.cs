@@ -15,6 +15,16 @@
 
         static void Main(string[] args)
         {
+            while (true)
+            {
+                PlayGame();
+                if (!ContinueGame())
+                    break;
+            }
+        }
+
+        private static void PlayGame()
+        {
             var word = words[random.Next(words.Count)];
             var game = new Hangman(word, LIVES);
 
@@ -49,6 +59,12 @@
                 Console.WriteLine("YOU WIN!");
             else
                 Console.WriteLine("G A M E   O V E R");
+        }
+
+        private static bool ContinueGame()
+        {
+            Console.WriteLine("Play again? (y/n) ");
+            return "y" == Console.ReadKey().KeyChar.ToString().ToLower();
         }
     }
 }
