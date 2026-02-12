@@ -40,8 +40,18 @@ namespace tests
             Assert.False(game.IsGameWon());
         }
 
+        [Fact]
+        public void A_duplicate_guess_isnt_penalized()
+        {
+            Hangman game = new Hangman("banana", 2);
+            game.Guess("xx");
+            Assert.False(game.IsGameOver());
+            Assert.False(game.IsGameWon());
+        }
+
         [Theory]
         [InlineData("a", "_ a _ a _ a")]
+        [InlineData("aa", "_ a _ a _ a")]
         [InlineData("A", "_ a _ a _ a")]
         [InlineData("b", "b _ _ _ _ _")]
         [InlineData("n", "_ _ n _ n _")]

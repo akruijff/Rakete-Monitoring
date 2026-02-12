@@ -6,6 +6,7 @@ namespace _03___Hangman
     {
         private string secretWord;
         private string guessedLetters = "";
+        private string wrongLetters = "";
         private int lives;
 
         public Hangman(string secretWord, int lives)
@@ -25,8 +26,11 @@ namespace _03___Hangman
         {
             if (secretWord.Contains(letter))
                 guessedLetters += letter;
-            else
+            else if (!wrongLetters.Contains(letter))
+            {
+                wrongLetters += letter;
                 --lives;
+            }
         }
 
         public bool IsGameOver()
