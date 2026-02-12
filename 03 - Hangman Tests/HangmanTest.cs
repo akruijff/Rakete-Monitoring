@@ -66,6 +66,13 @@ namespace tests
             Assert.False(game.IsGameWon());
         }
 
+        [Fact]
+        public void Special_characters_in_the_secret_word_are_always_shown()
+        {
+            Hangman game = new Hangman("b@n@n@", 3);
+            Assert.Equal("_ @ _ @ _ @", game.Status());
+        }
+
         [Theory]
         [InlineData("a", "_ a _ a _ a")]
         [InlineData("aa", "_ a _ a _ a")]

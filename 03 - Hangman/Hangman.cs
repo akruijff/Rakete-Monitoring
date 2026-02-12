@@ -13,6 +13,10 @@ namespace _03___Hangman
         {
             this.secretWord = secretWord.ToLower();
             this.lives = lives;
+
+            foreach (char c in secretWord)
+                if (!char.IsLetter(c))
+                    guessedLetters += c;
         }
 
         public void Guess(string letters)
