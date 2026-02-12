@@ -2,7 +2,7 @@
 
 namespace _03___Hangman
 {
-    internal class Hangman
+    public class Hangman
     {
         private string secretWord;
         private string guessedLetters = "";
@@ -14,7 +14,7 @@ namespace _03___Hangman
             this.lives = lives;
         }
 
-        internal void Guess(string letter)
+        public void Guess(string letter)
         {
             if (secretWord.Contains(letter))
                 guessedLetters += letter;
@@ -22,12 +22,12 @@ namespace _03___Hangman
                 --lives;
         }
 
-        internal bool IsGameOver()
+        public bool IsGameOver()
         {
             return lives <= 0 || IsGameWon();
         }
 
-        internal bool IsGameWon()
+        public bool IsGameWon()
         {
             foreach (char c in secretWord)
                 if (!guessedLetters.Contains(c))
@@ -35,7 +35,7 @@ namespace _03___Hangman
             return true;
         }
 
-        internal String Status()
+        public String Status()
         {
             StringBuilder builder = new StringBuilder(secretWord.Length * 2);
             foreach (char c in secretWord)
