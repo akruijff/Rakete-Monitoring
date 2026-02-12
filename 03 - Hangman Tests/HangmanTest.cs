@@ -64,6 +64,7 @@ namespace tests
         [InlineData("b", "b _ _ _ _ _")]
         [InlineData("n", "_ _ n _ n _")]
         [InlineData("x", "_ _ _ _ _ _")]
+        [InlineData("xbn", "b _ n _ n _")]
         [InlineData("abn", "b a n a n a")]
         public void A_letter_that_is_guessed_shows_in_status(string guesses, string status)
         {
