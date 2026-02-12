@@ -5,12 +5,21 @@ namespace _03___Hangman
     internal class Hangman
     {
         private string secretWord;
+        private string guessedLetters = "";
         private int lives;
 
         public Hangman(string secretWord, int lives)
         {
             this.secretWord = secretWord;
             this.lives = lives;
+        }
+
+        internal void Guess(char letter)
+        {
+            if (secretWord.Contains(letter))
+                guessedLetters += letter;
+            else
+                --lives;
         }
 
         internal String Status()

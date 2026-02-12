@@ -9,6 +9,9 @@
 
             var game = new Hangman("banana", 5);
             Console.WriteLine(game.Status());
+            Console.WriteLine();
+            Console.WriteLine("Guess a letter: ");
+            game.Guess(Console.ReadKey().KeyChar);
         }
     }
 }
