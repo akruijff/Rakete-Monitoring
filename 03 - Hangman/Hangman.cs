@@ -14,7 +14,13 @@ namespace _03___Hangman
             this.lives = lives;
         }
 
-        public void Guess(string letter)
+        public void Guess(string letters)
+        {
+            foreach (char c in letters)
+                Guess(c);
+        }
+
+        private void Guess(char letter)
         {
             if (secretWord.Contains(letter))
                 guessedLetters += letter;

@@ -15,10 +15,7 @@ namespace tests
         public void A_game_is_won_when_the_word_is_guessed()
         {
             Hangman game = new Hangman("banana", 3);
-            game.Guess("a");
-            game.Guess("b");
-            game.Guess("n");
-
+            game.Guess("abn");
             Assert.True(game.IsGameOver());
             Assert.True(game.IsGameWon());
         }
@@ -27,9 +24,7 @@ namespace tests
         public void A_game_is_lost_when_lives_run_out_and_the_words_isnt_guessed()
         {
             Hangman game = new Hangman("banana", 3);
-            game.Guess("x");
-            game.Guess("y");
-            game.Guess("z");
+            game.Guess("xyz");
             Assert.True(game.IsGameOver());
             Assert.False(game.IsGameWon());
         }
