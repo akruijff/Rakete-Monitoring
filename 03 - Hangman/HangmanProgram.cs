@@ -8,6 +8,7 @@
             Console.WriteLine();
 
             var game = new Hangman("banana", 5);
+            Console.WriteLine(game.Status());
         }
     }
 }
