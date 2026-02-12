@@ -31,6 +31,7 @@ namespace tests
 
         [Theory]
         [InlineData("a", "_ a _ a _ a")]
+        [InlineData("A", "_ a _ a _ a")]
         [InlineData("b", "b _ _ _ _ _")]
         [InlineData("n", "_ _ n _ n _")]
         [InlineData("x", "_ _ _ _ _ _")]
@@ -38,8 +39,7 @@ namespace tests
         public void A_letter_that_is_guessed_shows_in_status(string guesses, string status)
         {
             Hangman game = new Hangman("banana", 3);
-            foreach (char guess in guesses)
-                game.Guess(guess.ToString());
+            game.Guess(guesses);
             Assert.Equal(status, game.Status());
         }
     }

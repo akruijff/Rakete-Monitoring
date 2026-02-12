@@ -16,6 +16,7 @@ namespace _03___Hangman
 
         public void Guess(string letters)
         {
+            letters = letters.ToLower();
             foreach (char c in letters)
                 Guess(c);
         }
