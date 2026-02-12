@@ -24,7 +24,15 @@ namespace _03___Hangman
 
         internal bool IsGameOver()
         {
-            return lives <= 0;
+            return lives <= 0 || IsGameWon();
+        }
+
+        private bool IsGameWon()
+        {
+            foreach (char c in secretWord)
+                if (!guessedLetters.Contains(c))
+                    return false;
+            return true;
         }
 
         internal String Status()
