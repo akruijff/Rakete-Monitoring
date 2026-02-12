@@ -11,7 +11,7 @@ namespace _03___Hangman
 
         public Hangman(string secretWord, int lives)
         {
-            this.secretWord = secretWord;
+            this.secretWord = secretWord.ToLower();
             this.lives = lives;
         }
 

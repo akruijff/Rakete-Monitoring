@@ -13,6 +13,15 @@ namespace tests
         }
 
         [Fact]
+        public void An_constracted_game_is_in_lower_case()
+        {
+            Hangman game = new Hangman("Banana", 3);
+            game.Guess("abn");
+            Assert.True(game.IsGameOver());
+            Assert.True(game.IsGameWon());
+        }
+
+        [Fact]
         public void A_game_is_won_when_the_word_is_guessed()
         {
             Hangman game = new Hangman("banana", 3);
