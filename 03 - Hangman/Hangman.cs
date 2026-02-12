@@ -22,7 +22,7 @@ namespace _03___Hangman
                 Guess(c);
         }
 
-        private void Guess(char letter)
+        public void Guess(char letter)
         {
             if (lives == 0)
                 throw new InvalidOperationException("game over");
