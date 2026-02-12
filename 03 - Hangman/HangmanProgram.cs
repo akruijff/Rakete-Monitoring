@@ -50,7 +50,8 @@
         {
             Console.WriteLine();
             Console.WriteLine("Guess a letter: ");
-            game.Guess(Console.ReadKey().KeyChar.ToString().ToLower());
+            char input = Console.ReadKey(true).KeyChar;
+            game.Guess(char.ToLower(input));
         }
 
         private static void DisplayResult(Hangman game)
